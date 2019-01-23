@@ -1,8 +1,8 @@
-package com.kotlin.tutorial.web.controller
+package com.hx.tutorial.web.controller
 
-import com.kotlin.tutorial.user.User
-import com.kotlin.tutorial.user.service.IUserService
-import com.kotlin.tutorial.web.dto.HttpResponse
+import com.hx.tutorial.user.User
+import com.hx.tutorial.user.service.IUserService
+import com.hx.tutorial.web.dto.HttpResponse
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -32,6 +32,6 @@ class UserController {
 
         userService.createUser(userName,password)
 
-        return HttpResponse("create ${userName} success")
+        return HttpResponse("create $userName success")
     }
 }

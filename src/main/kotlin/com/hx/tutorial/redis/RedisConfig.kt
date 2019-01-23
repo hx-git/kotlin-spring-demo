@@ -1,4 +1,4 @@
-package com.kotlin.tutorial.redis
+package com.hx.tutorial.redis
 
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.data.redis.connection.RedisConnectionFactory
@@ -26,8 +26,8 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties
 @EnableConfigurationProperties(RedisProperties::class)
 open class RedisConfig : CachingConfigurerSupport() {
 
-    @Bean(name = arrayOf("redisTemplate"))
-    @ConditionalOnMissingBean(name = arrayOf("redisTemplate"))
+    @Bean(name = ["redisTemplate"])
+    @ConditionalOnMissingBean(name = ["redisTemplate"])
     open fun redisTemplate(redisConnectionFactory: RedisConnectionFactory): RedisTemplate<Any, Any> {
 
         val template = RedisTemplate<Any, Any>()

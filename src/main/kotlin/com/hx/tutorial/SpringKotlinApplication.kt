@@ -1,4 +1,4 @@
-package com.kotlin.tutorial
+package com.hx.tutorial
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 
 /**
  * Created by tony on 2018/11/13.
+ * 开启事务驱动
  */
 @SpringBootApplication
 open class SpringKotlinApplication

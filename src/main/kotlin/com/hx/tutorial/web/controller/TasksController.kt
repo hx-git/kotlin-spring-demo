@@ -1,10 +1,10 @@
-package com.kotlin.tutorial.web.controller
+package com.hx.tutorial.web.controller
 
-import com.kotlin.tutorial.task.impl.ConcurrentTasksExecutor
-import com.kotlin.tutorial.task.impl.MockTask
-import com.kotlin.tutorial.web.dto.TaskResponse
-import com.kotlin.tutorial.web.dto.ErrorResponse
-import com.kotlin.tutorial.web.dto.HttpResponse
+import com.hx.tutorial.task.impl.ConcurrentTasksExecutor
+import com.hx.tutorial.task.impl.MockTask
+import com.hx.tutorial.web.dto.TaskResponse
+import com.hx.tutorial.web.dto.ErrorResponse
+import com.hx.tutorial.web.dto.HttpResponse
 import org.springframework.http.HttpStatus
 import org.springframework.util.StopWatch
 import org.springframework.web.bind.annotation.*

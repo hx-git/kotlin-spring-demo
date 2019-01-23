@@ -1,7 +1,7 @@
-package com.kotlin.tutorial.user.service.impl
+package com.hx.tutorial.user.service.impl
 
-import com.kotlin.tutorial.user.User
-import com.kotlin.tutorial.user.service.IUserService
+import com.hx.tutorial.user.User
+import com.hx.tutorial.user.service.IUserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Service
@@ -17,20 +17,15 @@ class UserServiceImpl : IUserService {
     lateinit var redisTemplate: RedisTemplate<Any, Any>
 
     override fun getUser(username: String): User {
-
-        var user = redisTemplate.opsForValue().get("user_${username}")
-
+        var user = redisTemplate.opsForValue().get("user_$username")
         if (user == null) {
-
             user = User("default","000000")
          }
-
         return user as User
     }
 
     override fun createUser(username: String, password: String) {
-
-        redisTemplate.opsForValue().set("user_${username}", User(username, password))
+        redisTemplate.opsForValue().set("user_$username", User(username, password))
     }
 
 }

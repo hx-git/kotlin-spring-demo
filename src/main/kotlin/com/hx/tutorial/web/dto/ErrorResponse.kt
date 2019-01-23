@@ -1,4 +1,4 @@
-package com.kotlin.tutorial.web.dto
+package com.hx.tutorial.web.dto
 
 /**
  * Created by tony on 2018/11/13.

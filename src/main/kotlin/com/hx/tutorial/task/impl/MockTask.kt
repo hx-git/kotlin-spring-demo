@@ -1,7 +1,7 @@
-package com.kotlin.tutorial.task.impl
+package com.hx.tutorial.task.impl
 
 import java.util.concurrent.TimeUnit
-import com.kotlin.tutorial.task.ITask
+import com.hx.tutorial.task.ITask
 
 /**
  * Created by tony on 2018/11/13.

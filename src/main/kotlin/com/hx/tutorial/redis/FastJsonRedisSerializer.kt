@@ -1,4 +1,4 @@
-package com.kotlin.tutorial.redis
+package com.hx.tutorial.redis
 
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.serializer.SerializerFeature

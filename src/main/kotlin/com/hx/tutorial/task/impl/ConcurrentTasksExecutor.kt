@@ -1,6 +1,6 @@
-package com.kotlin.tutorial.task.impl
+package com.hx.tutorial.task.impl
 
-import com.kotlin.tutorial.task.ITask
+import com.hx.tutorial.task.ITask
 import io.reactivex.Completable
 import io.reactivex.schedulers.Schedulers
 import org.slf4j.LoggerFactory
@@ -13,14 +13,15 @@ import java.util.stream.Collectors
 /**
  * Created by tony on 2018/11/13.
  */
-class ConcurrentTasksExecutor(private val numberOfConcurrentThreads: Int, private val tasks: Collection<ITask>?) : ITask {
+class ConcurrentTasksExecutor(private val numberOfConcurrentThreads: Int,
+                              private val tasks: Collection<ITask>?) : ITask {
 
     val log = LoggerFactory.getLogger(this.javaClass)
 
-    constructor(numberOfConcurrentThreads: Int, vararg tasks: ITask) : this(numberOfConcurrentThreads, if (tasks == null) null else Arrays.asList<ITask>(*tasks)) {}
+    constructor(numberOfConcurrentThreads: Int, vararg tasks: ITask)
+            : this(numberOfConcurrentThreads, if (tasks == null) null else Arrays.asList<ITask>(*tasks))
 
     init {
-
         if (numberOfConcurrentThreads < 0) {
             throw RuntimeException("Amount of threads must be higher than zero.")
         }
@@ -34,24 +35,17 @@ class ConcurrentTasksExecutor(private val numberOfConcurrentThreads: Int, privat
      */
     private val asConcurrentTasks: List<Completable>
         get() {
-
             if (tasks!=null) {
-
                 val scheduler = createScheduler()
-
                 return tasks.stream()
                         .filter { task -> task != null }
                         .map { task ->
-                            Completable
-                                    .fromAction {
-                                        task.execute()
-                                    }
-                                    .subscribeOn(scheduler)
-                        }
-                        .collect(Collectors.toList())
+                            Completable.fromAction {
+                                task.execute()
+                            }.subscribeOn(scheduler)
+                        }.collect(Collectors.toList())
             } else {
-
-                return ArrayList<Completable>()
+                return ArrayList()
             }
         }
 

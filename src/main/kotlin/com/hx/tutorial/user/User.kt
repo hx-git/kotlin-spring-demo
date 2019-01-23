@@ -1,4 +1,4 @@
-package com.kotlin.tutorial.user
+package com.hx.tutorial.user
 
 import java.io.Serializable
 
